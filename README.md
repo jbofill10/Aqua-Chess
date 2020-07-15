@@ -1,4 +1,4 @@
-# Aqua-Chess
+# Aqua Chess
 
 Sister of [Magma-Chess](https://github.com/jbofill10/Magma-Chess)
 
