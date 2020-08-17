@@ -17,3 +17,6 @@ Inspired by the same learning techniques used by AlphaZero
 * Will establish a policy network which can decide whether positions are favorable or not
 
 * Use MCTS for move generation
+
+# Learning Process
+* Will play against itself to improve using Reinforcement Learning
