@@ -12,7 +12,7 @@ Inspired by the same learning techniques used by AlphaZero
 
 * Will play games against itself over and over and then train on those games
 
-* Similar to [Magma-Chess](https://github.com/jbofill10/Magma-Chess), it will create a 9x8 numerical representation of the board and pass that through a CNN
+* Similar to [Magma-Chess](https://github.com/jbofill10/Magma-Chess), it will create a 7x8x8 numerical representation of the board and pass that through a CNN
 
 * Will establish a policy network which can decide whether positions are favorable or not
 

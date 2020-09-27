@@ -1,0 +1,3 @@
+[submodule "chess_interface"]
+	path = chess_interface
+	url = git@github.com:jbofill10/chess_interface.git

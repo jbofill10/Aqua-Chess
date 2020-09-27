@@ -2,3 +2,5 @@ pandas
 numpy
 tqdm
 python-chess
+keras
+tensorflow
