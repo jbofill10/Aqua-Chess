@@ -13,14 +13,14 @@ def run():
 
     while curr_game_count < int(game_count):
         print(f'Playing on game {curr_game_count}')
-        p1 = Agent(mcts_depth=30, mcts_max_iter=500, color=1)
-        p2 = Agent(mcts_depth=30, mcts_max_iter=500, color=0)
+        p1 = Agent(mcts_depth=18, mcts_max_iter=200, color=1)
+        p2 = Agent(mcts_depth=18, mcts_max_iter=200, color=0)
 
         board = ChessGame()
         train_data = []
         while not board.is_game_over():
             if p1.color and board.curr_turn():
-                print(chr(27) + "[2J")
+
                 p1_move = p1.get_move(board)
                 board.make_move(p1_move, format='uci')
 
@@ -28,7 +28,7 @@ def run():
                 board.show_board()
 
             else:
-                print(chr(27) + "[2J")
+
                 p2_move = p2.get_move(board)
                 board.make_move(p2_move, format='uci')
                 board.show_board()

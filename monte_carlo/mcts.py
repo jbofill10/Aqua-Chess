@@ -3,7 +3,7 @@ from Preprocessing import convert_to_int
 import copy, random, math, sys
 import numpy as np
 import chess
-
+import threading
 
 class MonteCarloTreeSearch:
 
@@ -90,12 +90,6 @@ class MonteCarloTreeSearch:
 
             self.tree.visits += 1
 
-        overall_best_node = self.choose(self.tree)
-
-        print([l.reward for l in self.tree.children])
-
-        return str(overall_best_node.move)
-
     def process_board(self, node, board):
         white_kcastle = False
         black_kcastle = False
@@ -117,5 +111,13 @@ class MonteCarloTreeSearch:
                 black_qcastle = True
 
         return convert_to_int(board, white_kcastle, black_kcastle, white_qcastle, black_qcastle)
+
+    def get_best_move(self):
+
+        overall_best_node = self.choose(self.tree)
+        print([l.reward for l in self.tree.children])
+        # sys.exit(0)
+
+        return str(overall_best_node.move)
 
 

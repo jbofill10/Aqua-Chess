@@ -1,6 +1,8 @@
 from monte_carlo.mcts import MonteCarloTreeSearch
 from cnn import CovNet
 
+import threading
+
 
 class Agent:
 
@@ -17,4 +19,12 @@ class Agent:
         self.color = color
 
     def get_move(self, board):
-        return MonteCarloTreeSearch(board, depth=self.depth, model=self.model).run_mcts(self.max_iter)
+        mcts = MonteCarloTreeSearch(board, depth=self.depth, model=self.model)
+
+        threads = [threading.Thread(target=mcts.run_mcts, args=(self.max_iter//5,)) for _ in range(5)]
+
+        [thread.start() for thread in threads]
+
+        [thread.join() for thread in threads]
+
+        return mcts.get_best_move()
